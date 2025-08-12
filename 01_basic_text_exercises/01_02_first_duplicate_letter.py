@@ -8,10 +8,11 @@ stringProvided = input("Provide a string: ")
 string_no_spaces = stringProvided.replace(" ", "")
 #Convert string to lower case
 cleanString = string_no_spaces.lower()
-#Extract provided string's length to use as range
+#Create a buffer where characters go to wait to be compared
 charList = []
 
-
+#Define function to scroll through the string and add letters to the list if they're not already there
+#Or just return and print them if they are found
 def duplicate_scanner(string_no_spaces):
 
     for char in cleanString:

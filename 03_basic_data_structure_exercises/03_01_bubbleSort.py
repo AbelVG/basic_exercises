@@ -16,6 +16,7 @@ def bubbleSort(numberList):
                 holder = numberList[j]
                 numberList[j] = numberList[j+1]
                 numberList[j+1] = holder
+                print(numberList)
     return numberList
 
 
