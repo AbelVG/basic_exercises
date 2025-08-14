@@ -31,6 +31,23 @@ def primeAnalysis(primesList):
     print("mean :", primeSum/len(primesList))
     print("lowest prime: " + str(primesList[0]) + "\nHighest prime: " + str(primesList[-1]) +\
                          "\n--------------------------------------")
+    
+def primesPlot(primesList: list[int]) -> None:
+    if not primesList:
+        return
+    try:
+        import matplotlib.pyplot as plt
+        x = list(range(1, len(primesList) + 1))
+        y = primesList
+        plt.figure()
+        plt.scatter(x,y)
+        plt.title("Prime Numbers")
+        plt.xlabel("Index")
+        plt.ylabel("Prime Values")
+        plt.tight_layout()
+        plt.show()
+    except ImportError:
+        pass
 
 def main():
     try:
@@ -39,9 +56,9 @@ def main():
         print("Please enter a valid Integer.")
         return
 
-    isPrime(primeLimit)
     primesList = primeCount(primeLimit)
     primeAnalysis(primesList)
+    primesPlot(primesList)
 
 if __name__ == "__main__":
     main()
